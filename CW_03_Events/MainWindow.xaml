@@ -1,0 +1,28 @@
+﻿<Window x:Class="CW_03_Events.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CW_03_Events"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <StackPanel PreviewMouseRightButtonUp="StackPanel_PreviewMouseRightButtonUp" MouseRightButtonUp="StackPanel_MouseRightButtonUp">
+        <Button x:Name="btnMain" Height="120" Width="250" PreviewMouseRightButtonUp="btnMain_PreviewMouseRightButtonUp" MouseRightButtonUp="btnMain_MouseRightButtonUp">
+            <StackPanel>
+                <Button Content="One" Height="30" Width="70" Margin="5"/>
+                <Button x:Name="btnTwo" Content="Two" Height="30" Width="70" Margin="5" PreviewMouseRightButtonUp="btnTwol_PreviewMouseRightButtonUp" MouseRightButtonUp="StackPanel_MouseRightButtonUp"/>
+                <Button Content="Three" Height="30" Width="70" Margin="5"/>
+            </StackPanel>
+        </Button>
+
+        <TextBox x:Name="tbInfo" Height="100" Width="200" Margin="5" IsReadOnly="True"/>
+
+        <Button x:Name="btnClear" Content="Clear" Height="40" Width="80" Click="btnClear_Click"/>
+
+        <Grid Margin="10">
+            <Label x:Name="lblSource" Content="Source" Margin="40 0 0 0" MouseDown="lblSource_MouseDown"/>
+            <Label x:Name="lblDestination" Content="Destination" Margin="150 0 0 0" AllowDrop="True"
+                   DragEnter="lblDestination_DragEnter" Drop="lblDestination_Drop"/>
+        </Grid>
+    </StackPanel>
+</Window>
